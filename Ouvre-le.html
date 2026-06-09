@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Une petite lettre</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="music" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="petalContainer"></div>
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+
+  <button class="music-btn" onclick="toggleMusic()" id="musicBtn">Musique</button>
+
+  <main class="app">
+
+    <section class="page active start-game" id="page0">
+      <div class="game-icon">🎮</div>
+      <h1>Veux-tu jouer ?</h1>
+      <p class="tiny-joke">
+        J’ai passé trop de temps sur ce site pour accepter un refus à cette étape 😭
+      </p>
+      <button onclick="startFromGame()">Oui 😌</button>
+      <button onclick="startFromGame()">Tu n’as pas le choix de toute façon 🤷🏾‍♂️</button>
+    </section>
+
+
+    <section class="page intro" id="page1">
+      <div>
+        <p class="tag">Un petit jeu, juste pour toi</p>
+        <h1>J’ai quelque chose à te dire.</h1>
+        <p>
+          Rien de trop dramatique. Rien de trop bizarre.
+          Juste une petite page avec des questions, des fleurs, et une vérité que je gardais un peu trop longtemps.
+        </p>
+        <button onclick="startSite()">Commencer</button>
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/photo.jpg" alt="Photo">
+        <p>Un souvenir simple</p>
+      </div>
+    </section>
+
+    <section class="page question" id="page2">
+      <span class="step">1 / 6</span>
+      <h2>Tu préfères recevoir...</h2>
+      <button onclick="goToPage(3)">des fleurs</button>
+      <button onclick="goToPage(3)">une lettre</button>
+      <button onclick="goToPage(3)">les deux, évidemment</button>
+    </section>
+
+    <section class="page question" id="page3">
+      <span class="step">2 / 6</span>
+      <h2>Une belle attention, pour toi, c’est plutôt...</h2>
+      <button onclick="goToPage(4)">quelque chose de simple</button>
+      <button onclick="goToPage(4)">quelque chose de sincère</button>
+      <button onclick="goToPage(4)">quelque chose qu’on n’oublie pas</button>
+    </section>
+
+    <section class="page question" id="page4">
+      <span class="step">3 / 6</span>
+      <h2>Est-ce qu’une personne peut te plaire sans que ça devienne compliqué ?</h2>
+      <button onclick="goToPage(5)">Oui</button>
+      <button onclick="goToPage(5)">Je pense que oui</button>
+      <button onclick="goToPage(5)">Ça dépend de la personne</button>
+    </section>
+
+    <section class="page question" id="page5">
+      <span class="step">4 / 6</span>
+      <h2>Quand quelqu’un devient bizarre parce qu’il aime bien quelqu’un, c’est...</h2>
+      <button onclick="goToPage(6)">un peu drôle</button>
+      <button onclick="goToPage(6)">un peu mignon</button>
+      <button onclick="goToPage(6)">un peu les deux</button>
+    </section>
+
+    <section class="page question" id="page6">
+      <span class="step">5 / 6</span>
+      <h2>Si une personne t’admire de loin, sans pression, tu préfères qu’elle...</h2>
+      <button onclick="goToPage(7)">continue à faire semblant d’être normale</button>
+      <button onclick="goToPage(7)">l’exprime doucement</button>
+      <button onclick="goToPage(7)">fasse un site internet apparemment</button>
+    </section>
+
+    <section class="page question" id="page7">
+      <span class="step">6 / 6</span>
+      <h2>Bon... on arrive à la partie où je dois arrêter de tourner autour du sujet.</h2>
+      <p>Promis, il n’y aura pas d’examen final à la fin.</p>
+      <button onclick="openLetter()">Lire la lettre</button>
+    </section>
+
+    <section class="page letter-page" id="page8">
+      <span class="step">La lettre</span>
+      <h2>Ce que je voulais te dire</h2>
+      <div id="letterText" class="letter"></div>
+      <button id="nextBtn" class="hidden" onclick="goToPage(9)">Dernière page</button>
+    </section>
+
+    <section class="page final" id="page9">
+      <span class="step">Fin</span>
+      <h2>Voilà.</h2>
+      <p class="main-line">Maintenant tu sais.</p>
+      <p>
+        Je voulais simplement te le dire à ma manière.
+        Sans pression. Sans obligation. Juste avec sincérité.
+      </p>
+      <p>
+        Merci d’avoir pris le temps de lire jusqu’au bout.
+      </p>
+      <p class="flower-end">🌸</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
